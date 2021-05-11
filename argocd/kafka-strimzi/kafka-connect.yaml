@@ -1,0 +1,35 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnect
+metadata:
+  name: my-connect
+  annotations:
+    strimzi.io/use-connector-resources: "true"
+spec:
+  replicas: 1
+  bootstrapServers: kafka-cluster-kafka-bootstrap:9092
+  config:
+    group.id: my-connect
+    offset.storage.topic: my-connect-offsets
+    config.storage.topic: my-connect-configs
+    status.storage.topic: my-connect-status
+    config.storage.replication.factor: 1
+    offset.storage.replication.factor: 1
+    status.storage.replication.factor: 1
+    key.converter: "org.apache.kafka.connect.json.JsonConverter"
+    value.converter: "org.apache.kafka.connect.json.JsonConverter"
+    key.converter.schemas.enable: "false"
+    value.converter.schemas.enable: "false"
+  build:
+    output:
+      type: docker
+      image: angiakfir/kafka-connect-build
+      pushSecret: myregistrykey
+    plugins:
+      - name: mongodb-connector
+        artifacts:
+          - type: jar
+            url: "https://github.com/aphan1um/test-files/raw/master/mongo-kafka-1.5.0-all.jar"
+  template:
+    pod:
+      imagePullSecrets:
+        - name: myregistrykey
