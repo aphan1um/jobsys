@@ -4,6 +4,7 @@ metadata:
   name: parsed-jobs
   labels:
     strimzi.io/cluster: my-connect
+  namespace: kafka-cluster
 spec:
   partitions: 1
   replicas: 1
