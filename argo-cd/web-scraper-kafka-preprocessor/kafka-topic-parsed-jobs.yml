@@ -3,7 +3,7 @@ kind: KafkaTopic
 metadata:
   name: parsed-jobs
   labels:
-    strimzi.io/cluster: my-connect
+    strimzi.io/cluster: kafka-cluster
   namespace: kafka-cluster
 spec:
   partitions: 1
