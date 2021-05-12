@@ -25,10 +25,14 @@ spec:
       image: angiakfir/kafka-connect-build
       pushSecret: myregistrykey
     plugins:
+      - name: es-sink-connector
+        artifacts:
+          - type: jar
+            url: "https://github.com/aphan1um/jobsys/raw/master/kafka-plugins/elasticsearch-kafka-connect-11.0.4-all.jar"
       - name: mongodb-connector
         artifacts:
           - type: jar
-            url: "https://github.com/aphan1um/test-files/raw/master/mongo-kafka-1.5.0-all.jar"
+            url: "https://github.com/aphan1um/jobsys/raw/master/kafka-plugins/mongo-kafka-1.5.0-all.jar"
   template:
     pod:
       imagePullSecrets:
