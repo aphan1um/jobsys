@@ -12,3 +12,4 @@ spec:
     topics: parsed-jobs
     value.converter: org.apache.kafka.connect.json.JsonConverter
     value.converter.schemas.enable: false
+    schema.ignore: true
