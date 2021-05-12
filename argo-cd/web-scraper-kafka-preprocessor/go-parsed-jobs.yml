@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-parsed-jobs
+spec:
+  containers:
+    - name: goapp
+      image: angiakfir/kafka-preprocess
+      env:
+        - name:  KAFKA_BROKER
+          value: kafka-cluster-kafka-bootstrap.kafka-cluster.svc:9092
+        - name: KAFKA_GROUPID
+          value: demogroup-1
