@@ -1,0 +1,9 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: parsed-jobs
+  labels:
+    strimzi.io/cluster: my-connect
+spec:
+  partitions: 1
+  replicas: 1
