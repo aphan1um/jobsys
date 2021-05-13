@@ -37,3 +37,13 @@ spec:
     pod:
       imagePullSecrets:
         - name: myregistrykey
+  resources:
+    requests:
+      cpu: "1"
+      memory: 2Gi
+    limits:
+      cpu: "2"
+      memory: 2Gi
+  jvmOptions:
+    "-Xmx": "512m"
+    "-Xms": "512m"
