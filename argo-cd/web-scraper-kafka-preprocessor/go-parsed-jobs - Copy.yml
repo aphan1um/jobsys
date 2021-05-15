@@ -16,4 +16,4 @@ spec:
         - name: SERVER_PORT
           value: "9000"
         - name: KAFKA_BROKERCONNECT
-          value: "kafka-cluster-kafka-bootstrap:9092"
+          value: "kafka-cluster-kafka-bootstrap.kafka-cluster.svc:9092"
