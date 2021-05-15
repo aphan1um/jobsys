@@ -27,15 +27,17 @@ spec:
               port: 5601
             initialDelaySeconds: 25
             periodSeconds: 10
+          env:
+            - name: SERVER_BASEPATH
+              value: "/kibana"
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: elastic-es-ingress
+  name: elastic-kb-ingress
   annotations:
     kubernetes.io/ingress.class: "traefik"
-    ingress.kubernetes.io/rewrite-target: "/"
 spec:
   rules:
     - http:
