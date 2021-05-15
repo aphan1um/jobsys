@@ -27,3 +27,23 @@ spec:
               port: 5601
             initialDelaySeconds: 25
             periodSeconds: 10
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: elastic-es-ingress
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    ingress.kubernetes.io/rewrite-target: "/"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /kibana
+            pathType: Prefix
+            backend:
+              service:
+                name: elastic-kb-http
+                port:
+                  number: 5601
