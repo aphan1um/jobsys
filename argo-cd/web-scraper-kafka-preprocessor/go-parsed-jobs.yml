@@ -13,3 +13,5 @@ spec:
           value: demogroup-1
         - name: IS_PRODUCTION
           value: ''
+        - name: KAFKA_QUEUESIZE
+          value: '30'
