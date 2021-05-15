@@ -37,6 +37,7 @@ kind: Ingress
 metadata:
   name: elastic-kb-ingress
   annotations:
+    ingress.kubernetes.io/rewrite-target: "/"
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
