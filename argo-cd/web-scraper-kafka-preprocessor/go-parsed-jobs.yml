@@ -11,3 +11,5 @@ spec:
           value: kafka-cluster-kafka-bootstrap.kafka-cluster.svc:9092
         - name: KAFKA_GROUPID
           value: demogroup-1
+        - name: IS_PRODUCTION
+          value: ''
