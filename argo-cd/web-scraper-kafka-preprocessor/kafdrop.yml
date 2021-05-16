@@ -43,7 +43,7 @@ metadata:
   name: kafdrop-ingress
   annotations:
     kubernetes.io/ingress.class: "traefik"
-    ingress.kubernetes.io/rewrite-target: "/"
+    #ingress.kubernetes.io/rewrite-target: "/"
 spec:
   rules:
     - http:
