@@ -15,7 +15,7 @@ spec:
         - name: JVM_OPTS
           value: "-Xms32M -Xmx64M"
         - name: SERVER_SERVLET_CONTEXTPATH
-          value: "/"
+          value: "/kafdrop"
         - name: SERVER_PORT
           value: "9000"
         - name: KAFKA_BROKERCONNECT
