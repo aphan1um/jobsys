@@ -11,6 +11,7 @@ spec:
   type: {{ .Values.apollo.service.type }}
   ports:
     - port: {{ .Values.apollo.service.port }}
+      nodePort: {{ .Values.apollo.service.port }}
       targetPort: http
       protocol: TCP
       name: http

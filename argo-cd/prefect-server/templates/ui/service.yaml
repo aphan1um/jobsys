@@ -11,6 +11,7 @@ spec:
   type: {{ .Values.ui.service.type }}
   ports:
     - port: {{ .Values.ui.service.port | default .Values.ui.port }}
+      nodePort: {{ .Values.ui.service.port | default .Values.ui.port }}
       targetPort: http
       protocol: TCP
       name: http
