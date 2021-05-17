@@ -4,7 +4,8 @@ metadata:
   name: parsed-jobs
   labels:
     strimzi.io/cluster: kafka-cluster
-  namespace: kafka-cluster
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   partitions: 1
   replicas: 1
