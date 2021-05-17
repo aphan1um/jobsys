@@ -1,17 +1,28 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: go-parsed-jobs
+  label:
+    app: go-parsed-jobs
 spec:
-  containers:
-    - name: goapp
-      image: angiakfir/kafka-preprocess
-      env:
-        - name:  KAFKA_BROKER
-          value: kafka-cluster-kafka-bootstrap.kafka-cluster.svc:9092
-        - name: KAFKA_GROUPID
-          value: demogroup-1
-        - name: IS_PRODUCTION
-          value: ''
-        - name: KAFKA_QUEUESIZE
-          value: '30'
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-parsed-jobs
+  template:
+    metadata:
+      labels:
+        app: go-parsed-jobs
+    spec:
+      containers:
+        - name: goapp
+          image: angiakfir/kafka-preprocess
+          env:
+            - name:  KAFKA_BROKER
+              value: kafka-cluster-kafka-bootstrap.kafka-cluster.svc:9092
+            - name: KAFKA_GROUPID
+              value: demogroup-1
+            - name: IS_PRODUCTION
+              value: ''
+            - name: KAFKA_QUEUESIZE
+              value: '30'
