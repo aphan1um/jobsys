@@ -12,7 +12,7 @@ spec:
   config:
     connection.uri: "mongodb://my-user:testabc@mongodb-db-svc.mongo.svc:27017"
     database: jobs
-    collection: "v1_careerones"
+    collection: "v2_seeks"
     copy.existing: true
     key.converter": "org.apache.kafka.connect.json.JsonConverter"
     key.converter.schemas.enable: false
