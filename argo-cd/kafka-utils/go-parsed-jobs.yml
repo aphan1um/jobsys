@@ -25,4 +25,4 @@ spec:
             - name: IS_PRODUCTION
               value: ''
             - name: KAFKA_QUEUESIZE
-              value: '30'
+              value: '50'
