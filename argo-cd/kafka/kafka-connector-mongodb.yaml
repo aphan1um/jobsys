@@ -3,7 +3,7 @@ kind: KafkaConnector
 metadata:
   name: mongodb-source
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     strimzi.io/cluster: my-connect
 spec:
