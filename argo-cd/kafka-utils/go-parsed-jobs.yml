@@ -25,4 +25,6 @@ spec:
             - name: IS_PRODUCTION
               value: ''
             - name: KAFKA_QUEUESIZE
-              value: '60'
+              value: '100'
+            - name:  KAFKA_READ_MAXBYTES
+              value: '5000'
