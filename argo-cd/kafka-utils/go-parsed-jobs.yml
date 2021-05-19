@@ -21,12 +21,14 @@ spec:
             - name:  KAFKA_BROKER
               value: kafka-cluster-kafka-bootstrap.kafka-cluster.svc:9092
             - name: KAFKA_GROUPID
-              value: demogroup-1
+              value: demogroup-2
             - name: IS_PRODUCTION
               value: ''
             - name: KAFKA_QUEUESIZE
-              value: '1000'
+              value: '1200'
             - name: KAFKA_READ_MAXBYTES
-              value: '50000'
+              value: '75000'
             - name: SEND_POLL_MS
-              value: '7000'
+              value: '2000'
+            - name: NO_MESSAGES_DELAY_MS
+              value: '8000'
