@@ -21,7 +21,7 @@ spec:
             - name:  KAFKA_BROKER
               value: kafka-cluster-kafka-bootstrap.kafka-cluster.svc:9092
             - name: KAFKA_GROUPID
-              value: demogroup-2
+              value: demogroup-3
             - name: IS_PRODUCTION
               value: ''
             - name: KAFKA_QUEUESIZE
